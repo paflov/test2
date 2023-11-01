@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Booklet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../definitions/vo_Booklet.xsd">
+  <Metadata>
+    <Id>BOOKLET.SAMPLE-1</Id>
+    <Label>Sample booklet!!!!</Label>
+    <Description>This a sample booklet for testing/development/showcase purposes.</Description>
+  </Metadata>
+
+  <BookletConfig>
+    <Config key="logPolicy">debug</Config>
+    <Config key="pagingMode">concat-scroll-snap</Config>
+    <Config key="stateReportPolicy">eager</Config>
+    <Config key="page_navibuttons">SEPARATE_BOTTOM</Config>
+    <Config key="unit_screenheader">WITH_UNIT_TITLE</Config>
+    <Config key="unit_menu">ON</Config>
+    <Config key="loading_mode">LAZY</Config>
+<!--    <Config key="unit_time_left_warnings">5,4,1</Config>-->
+<!--    <Config key="unit_show_time_left">ON</Config>-->
+  </BookletConfig>
+
+  <Units>
+
+    <Unit id="externaleContent" label="External Content Stuff!" labelshort="Sample Unit" />
+
+    <Testlet id="a_testlet_with_restrictions" label="First Block">
+      <Restrictions>
+<!--        <ForwardOnly />-->
+        <CodeToEnter code="sample">Please insert the word `sample`.</CodeToEnter>
+        <TimeMax minutes="10" />
+      </Restrictions>
+      <Unit id="UNIT.SAMPLE-2" label="A very Simple Sample Unit" labelshort="b1.1" />
+      <Unit id="UNIT.SAMPLE-2" label="A very Simple Sample Unit" labelshort="b1.2" alias="u2" />
+      <Unit id="UNIT.SAMPLE-2" label="A very Simple Sample Unit" labelshort="b1.3" alias="u3" />
+      <Unit id="UNIT.SAMPLE-2" label="A very Simple Sample Unit" labelshort="b1.4" alias="u4" />
+    </Testlet>
+
+    <Testlet id="another_testlet" label="Second Block">
+      <Restrictions>
+        <CodeToEnter code="sample">Please insert the word `sample`.</CodeToEnter>
+      </Restrictions>
+      <Unit id="UNIT.SAMPLE" label="HUUUUGE" labelshort="HUUUUGE" />
+      <Unit id="UNIT.SAMPLE3" label="SAMPLE3" labelshort="b2.1 - SAMPLE3" alias="an_alias" />
+      <Unit id="UNIT.SAMPLE-2" label="A very Simple Sample Unit" labelshort="b2.2" alias="u6" />
+    </Testlet>
+    <Unit id="UNIT.SAMPLE-2" label="A very Simple Sample Unit" labelshort="r.2" alias="u7" />
+  </Units>
+</Booklet>

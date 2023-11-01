@@ -1,0 +1,29 @@
+<fieldset>
+  <legend data-cy="legend-logging">Log Test</legend>
+  <p><b>You can try out the logging mechanism here.</b></p>
+  <p>Your <code>playerConfig.logPolicy</code> is <code id="log-policy"></code>.</p>
+  <textarea id="input_field" style="width:100%"></textarea>
+
+  <button onclick="Log.rich('sample-log', 'log entry, if mode is rich'); return false"> Write log, if mode is 'rich'</button>
+  <button onclick="Log.lean('sample-log', 'log entry, if mode is lean'); return false"> Write log, if mode is 'lean'</button>
+  <button onclick="Log.debug('log entry, if mode is debug'); return false"> Write log, if mode is 'debug'</button>
+  <p>Logged items:</p>
+  <script>
+    const updateLogView = () => {
+      document.querySelector('#log-policy').innerHTML = playerConfig.logPolicy;
+      document.querySelector('#log-display').innerHTML = '';
+      Log.getAll().forEach(entry => {
+        document.querySelector('#log-display').innerHTML += `<tr><td>${entry.timeStamp}</td>`
+                + `<td>${entry.key}</td><td>${entry.content}</td><td>${entry.sent ? '✓' : ''}</td></td>`;
+      });
+    }
+    document.addEventListener('sent:vopStateChangedNotification', updateLogView);
+    document.addEventListener('updateLog', updateLogView);
+  </script>
+  <table>
+    <thead>
+      <tr><td>timestamp</td><td>key</td><td>content</td><td>sent?</td></tr>
+    </thead>
+    <tbody id="log-display"></tbody>
+  </table>
+</fieldset>

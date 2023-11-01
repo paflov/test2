@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Unit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../definitions/vo_Unit.xsd">
+  <Metadata lastChange="2022-10-24T15:13:22.736Z">
+    <Id>ESLHstart</Id>
+    <Label>Startseite</Label>
+    <Description/>
+  </Metadata>
+  <DefinitionRef player="iqb-player-aspect@1.27" editor="iqb-editor-aspect@1.34" lastChange="2022-10-25T10:55:20.057Z">ESLHstart.voud</DefinitionRef>
+  <CodingSchemeRef schemer="" lastChange="2022-01-13T12:45:51.000Z"/>
+</Unit>

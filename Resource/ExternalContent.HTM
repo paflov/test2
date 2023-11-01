@@ -1,0 +1,95 @@
+<style>
+  #external-content {
+    border-collapse: collapse;
+  }
+  #external-content td {
+    border: none;
+  }
+  #external-content .result {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+  }
+  #external-content .state {
+    background: whitesmoke;
+    border-radius: 12px;
+    height: 12px;
+    width: 12px;
+    border: 1px solid black;
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+  #external-content .state.yes {
+    background: green;
+  }
+  #external-content .state.no {
+    background: red;
+  }
+</style>
+
+
+
+
+<table id="external-content">
+
+  <tr id="by-fetch">
+    <td><div class="state"></div>fetch</td>
+    <td><pre class="result" style="overflow:scroll"></pre></td>
+    <td></td>
+  </tr>
+  <tr id="img-src">
+    <td><div class="state"></div>image-src</td>
+    <td><img class="result" src="https://img.shields.io/badge/License-MIT-yellow.svg" alt=""></td>
+  </tr>
+  <tr id="background-url">
+    <td><div class="state"></div>background-url</td>
+    <td><div class="result" style="background-image:url(https://img.shields.io/badge/License-MIT-yellow.svg)"></div></td>
+  </tr>
+  <tr id="import-font">
+    <td><div class="state"></div>import-font</td>
+    <td><div class="result" style="font-family: 'Noto Sans Symbols 2'">nein</div></td>
+  </tr>
+  <tr id="stylesheet">
+    <td><div class="state"></div>stylesheet</td>
+    <td><div class="result bg-green">green?</div></td>
+  </tr>
+  <tr id="iframe">
+    <td><div class="state"></div>iframe</td>
+    <td><iframe class="result" src="https://pages.cms.hu-berlin.de/iqb/testcenter/"></iframe></td>
+  </tr>
+  <tr id="external-link">
+    <td><div class="state"></div>external-link</td>
+    <td><a class="result" href="https://pages.cms.hu-berlin.de/iqb/testcenter/">Same</a></td>
+  </tr>
+  <tr id="external-link-new-window">
+    <td><div class="state"></div>external-link-new-window</td>
+    <td><a class="result" target="_blank" href="https://pages.cms.hu-berlin.de/iqb/testcenter/">Blank</a></td>
+  </tr>
+  <tr id="external-link-parent">
+    <td><div class="state"></div>external-link-new-window</td>
+    <td><a class="result" target="_parent" href="https://pages.cms.hu-berlin.de/iqb/testcenter/">parent</a></td>
+  </tr>
+  <tr id="navigation-by-script">
+    <td><div class="state"></div>navigation-by-script</td>
+    <td><button onclick="document.location = 'https://www.iqb-testcenter.de'">Click me</button></td>
+  </tr>
+</table>
+
+<script>
+  document.addEventListener('*', console.log);
+  document.addEventListener('vopStartCommand', () => {
+    fetch(`https://pages.cms.hu-berlin.de/iqb/testcenter/`)
+      .then(async res => { document.querySelector("#by-fetch .result").innerText = await res.text(); })
+      .catch(async () => { document.querySelector("#by-fetch .result").innerText = ''; })
+      .finally(async () => {
+        document.querySelector("#by-fetch .state").classList.add(
+          document.querySelector("#by-fetch .result").innerText.match('Testcenter Dokumentation') ? 'yes' : 'no'
+        );
+      });
+    document.getElementsByTagName('head')[0].insertAdjacentHTML(
+      'beforeend',
+      '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/colors.css/3.0.0/colors.min.css" integrity="sha512-eHWmU5oF5LHtxRNeVz4K5kQHlPeZFcFIS2T+tctXWDt6oHEGF7Kr6kh7ARppKmd8uGI0c0948Lfb+PSS14JWRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />'
+      + "<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap');</style>"
+    );
+  });
+</script>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Unit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/iqb-berlin/testcenter/14.3.0/definitions/vo_Unit.xsd">
+  <Metadata lastChange="2022-10-11T09:30:00+00:00">
+    <Id>externaleContent</Id>
+    <Label>A unit full of external content</Label>
+    <Description>ex</Description>
+  </Metadata>
+
+  <DefinitionRef player="verona-player-simple-4.0" editor="verona-editor-plaintext-1" lastChange="2022-10-11T09:30:00+00:00">ExternalContent.HTM</DefinitionRef>
+
+
+
+</Unit>

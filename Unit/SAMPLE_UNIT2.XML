@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Unit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/iqb-berlin/testcenter/14.3.0/definitions/vo_Unit.xsd">
+  <Metadata>
+    <Id>UNIT.SAMPLE-2</Id>
+    <Label>A sample unit</Label>
+    <Description>This is an Unit</Description>
+  </Metadata>
+
+  <Definition player="verona-player-simple-4.0" type="this-should-trigger-a-deprecation-warning">
+    <![CDATA[
+        <img src="data:image/svg+xml;base64,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%22360px%22%20height%3D%22360px%22%20viewBox%3D%220%200%20360%20360%22%20style%3D%22enable-background%3Anew%200%200%20360%20360%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%3E%0A%09%3Cg%3E%0A%09%09%3Cpath%20d%3D%22M348.994%2C102.946L250.04%2C3.993c-5.323-5.323-13.954-5.324-19.277%2C0l-153.7%2C153.701l118.23%2C118.23l153.701-153.7%0A%09%09%09C354.317%2C116.902%2C354.317%2C108.271%2C348.994%2C102.946z%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M52.646%2C182.11l-41.64%2C41.64c-5.324%2C5.322-5.324%2C13.953%2C0%2C19.275l98.954%2C98.957c5.323%2C5.322%2C13.954%2C5.32%2C19.277%2C0%0A%09%09%09l41.639-41.641L52.646%2C182.11z%22%2F%3E%0A%09%09%3Cpolygon%20points%3D%22150.133%2C360%20341.767%2C360%20341.767%2C331.949%20182.806%2C331.949%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E"></img>
+    ]]>
+  </Definition>
+</Unit>

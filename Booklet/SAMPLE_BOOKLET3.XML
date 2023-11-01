@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Booklet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/iqb-berlin/testcenter/14.3.0/definitions/vo_Booklet.xsd">
+  <Metadata>
+    <Id>BOOKLET.SAMPLE-3</Id>
+    <Label>Brutalste Rekursion</Label>
+    <Description>
+      This booklet has the same species as sample Booklet 1. The term booklet species indicates that both booklets can
+      be controlled by the group-monitor as if they where the same.
+      The species is currently defined as having the same number of testlets on the first level (called blocks). This
+      definition may change later.
+    </Description>
+  </Metadata>
+
+  <BookletConfig>
+    <Config key="unit_menu">ON</Config>
+    <Config key="controller_design">2018</Config>
+  </BookletConfig>
+
+  <Units>
+
+
+
+    <Testlet id="a_testlet" label="2nd Block here, 1st Block in BOOKLET.SAMPLE-1">
+
+<!--      <Restrictions>-->
+<!--        <CodeToEnter code="A"/>-->
+<!--      </Restrictions>-->
+
+      <Unit id="UNIT.SAMPLE" label="Unit b1.1" labelshort="b1.1" alias="b1.1" />
+      <Unit id="UNIT.SAMPLE" label="Unit b1.2" labelshort="b1.2" alias="b1.2" />
+
+
+      <Testlet id="sub_testlet" label="A Subtestlet">
+
+        <Unit id="UNIT.SAMPLE" label="Unit b1.1.1" labelshort="b1.1.1" alias="b1.1.1" />
+        <Unit id="UNIT.SAMPLE" label="Unit b1.1.2" labelshort="b1.1.2" alias="b1.1.2" />
+
+        <Testlet id="sub_sub_testlet" label="A Subtestlet">
+
+          <Restrictions>
+            <CodeToEnter code="C"/>
+          </Restrictions>
+
+          <Unit id="UNIT.SAMPLE" label="Unit b1.1.1.1" labelshort="b1.1.1.1" alias="b1.1.1.1" />
+          <Unit id="UNIT.SAMPLE" label="Unit b1.1.1.2" labelshort="b1.1.1.2" alias="b1.1.1.2" />
+        </Testlet>
+
+        <Unit id="UNIT.SAMPLE" label="Unit b1.1.3" labelshort="b1.1.3" alias="b1.1.3" />
+        <Unit id="UNIT.SAMPLE" label="Unit b1.1.4" labelshort="b1.1.4" alias="b1.1.4" />
+
+        <Testlet id="sub_sub_testlet2" label="A Subtestlet">
+
+          <Restrictions>
+            <CodeToEnter code="D"/>
+          </Restrictions>
+
+          <Unit id="UNIT.SAMPLE" label="Unit b1.1.2.1" labelshort="b1.1.2.1" alias="b1.1.2.1" />
+          <Unit id="UNIT.SAMPLE" label="Unit b1.1.2.2" labelshort="b1.1.2.2" alias="b1.1.2.2" />
+        </Testlet>
+
+        <Unit id="UNIT.SAMPLE" label="Unit b1.1.2.5" labelshort="b1.1.2.5" alias="b1.1.2.5" />
+
+      </Testlet>
+
+      <Unit id="UNIT.SAMPLE" label="Unit b1.3" labelshort="b1.3" alias="b1.3" />
+      <Unit id="UNIT.SAMPLE" label="Unit b1.4" labelshort="b1.4" alias="b1.4" />
+
+    </Testlet>
+
+    <Testlet id="b2">
+      <Restrictions>
+        <TimeMax minutes="1"/>
+      </Restrictions>
+      <Unit id="UNIT.SAMPLE" label="Unit b1.1" labelshort="b1.1" alias="b2.1" />
+      <Unit id="UNIT.SAMPLE" label="Unit b1.1" labelshort="b1.1" alias="b2.2" />
+    </Testlet>
+
+    <Testlet id="b3">
+      <Restrictions>
+        <TimeMax minutes="1"/>
+      </Restrictions>
+      <Unit id="UNIT.SAMPLE" label="Unit b1.1" labelshort="b1.1" alias="b3.1" />
+      <Unit id="UNIT.SAMPLE" label="Unit b1.1" labelshort="b1.1" alias="b3.2" />
+    </Testlet>
+
+  </Units>
+</Booklet>

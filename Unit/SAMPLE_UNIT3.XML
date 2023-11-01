@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Unit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/iqb-berlin/testcenter/14.3.0/definitions/vo_Unit.xsd">
+  <Metadata lastChange="2022-10-11T09:30:00+00:00">
+    <Id>UNIT.SAMPLE3</Id>
+    <Label>SU3</Label>
+    <Description>This is a sample unit showing the possibilities of the sample player.</Description>
+  </Metadata>
+
+  <DefinitionRef player="verona-player-simple-4.0" editor="verona-editor-plaintext-1" lastChange="2022-10-11T09:30:00+00:00">inhalt.htm</DefinitionRef>
+
+  <CodingSchemeRef schemer="default-schemer-1" lastChange="2022-10-11T09:30:00+00:00" />
+
+  <BaseVariables>
+    <Variable id="ä" type="integer" />
+    <Variable id="ü" type="attachment" format="capture-image" />
+    <Variable id="á" type="string" multiple="true">
+      <Values>
+        <Value>
+          <label>A</label>
+          <value>a</value>
+        </Value>
+        <Value>
+          <label>A</label>
+          <value>a</value>
+        </Value>
+        <Value>
+          <label>A</label>
+          <value>a</value>
+        </Value>
+      </Values>
+    </Variable>
+  </BaseVariables>
+
+  <DerivedVariables>
+    <Variable id="ö" type="string" />
+  </DerivedVariables>
+</Unit>
